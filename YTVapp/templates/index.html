@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
     <style>
         .container {
             text-align: center;
@@ -16,7 +18,9 @@
 <body>
 
     <div class="container">
-        <h1>Youtube video downloader</h1>
+        <h1>Youtube video downloader(raxmatjon hamidov)</h1>
+        <h5 class='text-info'>Note:When you enter correct link and press enter the video will be downloaded automaticly and you can open it video editor and move your local computer</h5>
+        
 
         <p>{{msg}}</p>
 
@@ -28,7 +32,19 @@
             <input type="submit" value="Download">
         </form>
     </div>
+    <div class='container'>
+     
+    {% if download_url %}
+        <h2>Video:</h2>
+        <p class='text-danger'>Title: {{ video_title }}</p>
+        <a href="{{ download_url }}" download>See The Video(and download it)</a>
+    {% endif %}
 
+    {% if msg %}
+        <p>{{ msg }}</p>
+    {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 
 </html>
